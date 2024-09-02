@@ -4,7 +4,7 @@ This tutorial will provide a full walkthrough of how to attack passwordward hash
 A rainbow table is where you have a pre defined password list and you have used a tool such as `` to generate respective hashes into a file. from there you pass those target hashes to the hash file that you are trying to crack and any matches will be identified
 
 ### Basic rainbow table list generation
-1. install knotty.pyp from [knotty](https://github.com/prodigiousMind/knotty)
+1. install [knotty.php](https://github.com/prodigiousMind/knotty)
 2. have a wordlist you would like to use to target the hashes
 3. execute `for (pt in $(cat plaintext-wordlist); do php knotty.php plaintext=${pt} algo=all format=3;done) > reinbow-table` you can look into the readme and stuff to be more specific about format and algorithem values
 ![image](https://github.com/user-attachments/assets/5c9f961f-9702-4d81-8212-13a60165ce78)
