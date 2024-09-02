@@ -5,8 +5,7 @@
 3. this will do a full tcp udp service scan on the target IP address,
 
 ### add a target range
-5. if you would like to target a range of ip addresses ensure to replace line 2 of the initialNMAP.sh with `base_ip="192.168.1."`
-6. create a list of numbers that represent the last octet and name it somthing like `ip_last_octet.txt` and add this below the `base_ip=...` line:
+1. create a list of numbers that represent the last octet and name it somthing like `ip_last_octet.txt` and add this below the `base_ip=...` line:
 ```
    # List of last octets
     touch ip_list.txt
@@ -15,7 +14,7 @@
       echo "$base_ip$line" >> ip_list.txt
     done;
 ```
-7. add a funtion to the outside of everything like:
+2. add a funtion to the outside of everything like:
    ```
     cat ip_list.txt | while read line;
     do
