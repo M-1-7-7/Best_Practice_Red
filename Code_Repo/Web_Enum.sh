@@ -36,11 +36,23 @@ run_hakrawler(){
 
 run_ferox(){
 	echo "--- Executing FEROXBUSTER on valid urls ---"
-	 echo $line
+	echo $line
 	cat url.txt | feroxbuster --stdin -k -s 200 301 302 -d 2 -w "/usr/share/seclists/Discovery/Web-Content/combined_words.txt" -o feroxScan.txt
 }
+
+run_nikto(){		
+	echo "--- Executing NIKTO on valid urls ---"
+	cat url.txt | while read line;
+ 	do
+  		echo $line
+  		nikto -h $line -Format html -output nikto_output.txt
+    	done;
+    	cat nikto_output.txt
+}
+
 
 run_whois
 run_curl
 run_hakrawler
 run_ferox
+run_nikto
